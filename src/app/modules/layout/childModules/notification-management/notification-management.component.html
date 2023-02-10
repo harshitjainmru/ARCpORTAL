@@ -1,0 +1,33 @@
+<section >
+  <div class="header">
+    <h1 class="heading">Notification Management</h1>
+    <div class="profileIcon">
+      <span class="material-icons">notifications</span>
+      <div class="user">
+        <span class="material-icons">account_circle</span>
+        <p id="name">user</p>
+      </div>
+    </div>
+  </div>
+  <hr class="border">
+  <div class="btn" >
+    <button mat-raised-button id="sendbtn" (click)="navToSend()">Send notification</button>
+  </div>
+  <div  class="filterSection">
+    <app-common-filter (resetButton)="resetFilter()" [formField]="filterForm" (applyButton)="applyFilter($event)" [searchTitle]="'Search through title, description'">
+    <div id="userType">
+      <form [formGroup]="filterForm">
+      <label>User</label>
+      <mat-form-field class="example-full-width2" appearance="outline" >
+        <mat-select placeholder="Select" matInput formControlName="userType">
+          <mat-option>None</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+    </form>
+    </div>
+    </app-common-filter>
+</div>
+  <app-common-table [columns]="heading" [dataSource]="dataSource">
+  </app-common-table>
+  </section>

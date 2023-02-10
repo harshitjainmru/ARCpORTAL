@@ -1,0 +1,40 @@
+$primary: #5282f0;
+$secondary: #759bf3;
+$backGroundColor: #eef3fe;
+
+body{
+  background-color:$backGroundColor ;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  margin-top: 1%;
+  padding: 10px 20px;
+  .preview{
+    display: flex;
+    flex-wrap: wrap;
+    .image{
+      display: flex;
+      background-color: white;
+      border-bottom: 4px solid #bf352e;
+      position: relative;
+      margin: 10px 10px 0 0;
+    }
+    a{
+      position: absolute;
+      right: 0;
+      top: 0;
+      cursor: pointer;
+    }
+    img{
+      height: 90px;
+      width: 100px;
+      margin: 10px;
+    }
+  }
+  button{
+    width: 150px;
+    background-color: $primary;
+    color: white;
+    margin: 0 6px;
+  }
+}

@@ -1,0 +1,84 @@
+<section>
+  <div class="header">
+    <h1 class="heading">Transaction Management</h1>
+    <div class="profileIcon">
+      <span class="material-icons">notifications</span>
+      <div class="user">
+        <span class="material-icons">account_circle</span>
+        <p id="name">user</p>
+      </div>
+    </div>
+  </div>
+  <hr class="border">
+  <div class="payment">
+    <div class="userPayment totalPayment">
+      <h3>Total Payment</h3>
+      <h3>$120000</h3>
+    </div>
+    <div class="userPayment currentPayment">
+      <h3>Current Month Payment</h3>
+      <h3>$1200</h3>
+    </div>
+  </div>
+  <app-common-filter (resetButton)="resetFilter()" (applyButton)="applyFilter($event)" [formField]="filterForm"
+    [searchTitle]="'Search through transaction id'">
+    <form [formGroup]="filterForm" class="filterSectionRow2">
+      <div class="inputFields">
+        <div id="transactionFilter">
+          <label  class="labelStyle">Date</label>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label class="labelStyle">From</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="addedOn" readonly>
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon class="dropIcon">arrow_drop_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="dateField">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label class="labelStyle">To</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="dateTo" readonly>
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            <mat-datepicker-toggle matSuffix [for]="picker1">
+              <mat-icon matDatepickerToggleIcon class="dropIcon">arrow_drop_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div id="transactionFilter">
+          <label  class="labelStyle">Amount Range </label>
+          <mat-form-field class="example-full-width2" appearance="outline" required>
+            <mat-select placeholder="From" matInput formControlName="addedOn">
+              <mat-option>None</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="dateField">
+          <mat-form-field class="example-full-width2" appearance="outline" required>
+            <mat-label class="labelStyle">To</mat-label>
+            <mat-select placeholder="To" matInput formControlName="dateTo">
+              <mat-option>None</mat-option>
+
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div id="status">
+          <label  class="labelStyle">Status</label>
+          <mat-form-field class="example-full-width2" appearance="outline" required>
+            <mat-select placeholder="Select" matInput formControlName="status">
+              <mat-option>None</mat-option>
+
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="fileIcon">
+          <i class="fa-solid fa-file-export"></i>
+        </div>
+      </div>
+    </form>
+  </app-common-filter>
+  <app-common-table [columns]="heading" [dataSource]="dataSource"></app-common-table>
+</section>

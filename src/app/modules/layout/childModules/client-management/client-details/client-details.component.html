@@ -1,0 +1,193 @@
+<section>
+  <div class="header">
+    <h1 class="heading">Client Management</h1>
+    <div class="profileIcon">
+      <span class="material-icons">notifications</span>
+      <div class="user">
+        <span class="material-icons">account_circle</span>
+        <p id="name">user</p>
+      </div>
+    </div>
+    <div class="breadcrumb">
+      <p class="text"><a [routerLink]="'CLIENT_MANAGE' | absoluteUrl" class="linkDecor">Client Management </a> > Details
+      </p>
+    </div>
+  </div>
+  <hr class="border">
+  <div class="details">
+    <h1 class="text">Client Details</h1>
+    <div class="icon">
+      <mat-icon class="alertIcon">delete</mat-icon>
+      <mat-icon class="alertIcon">block</mat-icon>
+    </div>
+  </div>
+  <mat-grid-list [cols]="breakpoint" rowHeight="0.05:0.025" (window:resize)="onResize($event)" class="gridList">
+    <mat-grid-tile class="box box1">
+      <div class="icon">
+        <mat-icon id="personIcon">person</mat-icon>
+      </div>
+      <div class="clientData">
+        <h2 class="title">Client ID</h2>
+        <h1 class="title titleData">Client1234</h1>
+        <h2 class="title">Email</h2>
+        <h1 class="title titleData">Martinbrown@arc.com</h1>
+        <h2 class="title">Postal Code</h2>
+        <h1 class="title titleData">024242</h1>
+        <h2 class="title">Address</h2>
+        <h1 class="title titleData">120-B Block, New York</h1>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="box box2">
+      <div class="name">
+        <h2 class="title">Full Name</h2>
+        <h1 class="title titleData">Martin Brown</h1>
+        <h2 class="title">Mobile Number</h2>
+        <h1 class="title titleData">+966-98765432</h1>
+        <h2 class="title">Case Status</h2>
+        <h1 class="title titleData">Closed</h1>
+        <h2 class="title">status</h2>
+        <h1 class="title titleData">Active</h1>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="box box3">
+      <h3 class="box3Heading">Spouse Details</h3>
+      <div class="spouseContact">
+        <h2 class="title">Full Name</h2>
+        <h1 class="title titleData">Olivia Brown</h1>
+        <h2 class="title">Email </h2>
+        <h1 class="title titleData">oliviabrown@arc.com</h1>
+        <h2 class="title">Generation</h2>
+        <h1 class="title titleData">IR</h1>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="box box4">
+      <div class="spouseDetail">
+        <h2 class="title">Mobile Number</h2>
+        <h1 class="title titleData">+966-98765432</h1>
+
+        <h2 class="title">Address</h2>
+        <h1 class="title titleData">120-B Block, New York</h1>
+
+        <h2 class="title">Postal Code</h2>
+        <h1 class="title titleData">024242</h1>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="userDocument">
+    <div class="attendedCall1">
+      <div class="callRow1">
+        <h1 class="rowHeading">Attended Call#1?</h1>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes</mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="number">
+        <h1 class="rowHeading">SSN Number <mat-icon id="editIcon">create</mat-icon>
+        </h1>
+        <mat-form-field appearance="outline">
+          <input matInput>
+        </mat-form-field>&nbsp;
+        <button mat-raised-button id="saveBtn">Save</button>
+      </div>
+    </div>
+    <div class="callRow2">
+      <h1 class="rowHeading">Attended Credit Counselling Session?</h1>
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Yes</mat-radio-button>
+        <mat-radio-button value="2">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="callRow3">
+      <div class="reviewed">
+        <h1 class="rowHeading">Credit Report Reviewed with Paralegal/Attorney?</h1>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes</mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="caseStatus">
+        <h1 class="rowHeading">Case Status</h1>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">In-progress</mat-radio-button>
+          <mat-radio-button value="2">Not filed</mat-radio-button>
+          <mat-radio-button value="3">Case Closed</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="report">
+      <h1 class="rowHeading">Credit Report</h1>
+      <div class="reportImage">
+        <img [src]="url" id="showImage" *ngIf="!showImage"> <br />
+        <div class="defaultImg" *ngIf="showImage">
+          <mat-icon id="clearIcon">clear</mat-icon>
+          <span class="material-icons" id="bookIcon">menu_book</span>
+        </div>
+        <button (click)="file1.click()" id="uploadBtn">
+          <input #file1 type='file' (change)="onSelectFile($event)" class="files_display"> Upload
+        </button>
+
+      </div>
+      <!-- <div class="file-upload">
+        <app-upload-file (fileUpload)="uploadFile($event)"></app-upload-file>
+      </div> -->
+    </div>
+    <div class="paymentType">
+      <h1 class="rowHeading">Payment Type</h1>
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Pre-filing</mat-radio-button>
+        <mat-radio-button value="2">Post-filing</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="amount">
+      <div class="paid">
+        <p class="statusAmount">Paid Amount</p>
+        <mat-form-field appearance="outline">
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="pending">
+        <p class="statusAmount">Pending Amount</p>
+        <mat-form-field appearance="outline">
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="btn">
+        <button mat-raised-button>Save</button>
+      </div>
+    </div>
+    <!-- </div> -->
+    <div class="attendedCall2">
+      <div class="callRow4">
+        <h1 class="rowHeading">Attended Call#2?</h1>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes</mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="clientDetail">
+        <h1 class="rowHeading">
+          BCI Files
+        </h1>
+        <div class="reportImage">
+          <img [src]="url" id="showImage" *ngIf="!showImage"> <br />
+          <div class="defaultImg" *ngIf="showImage">
+            <mat-icon id="clearIcon">clear</mat-icon>
+            <span class="material-icons" id="bookIcon">menu_book</span>
+          </div>
+          <button (click)="file1.click()" id="uploadBtn">
+            <input #file1 type='file' (change)="onSelectFile($event)" class="files_display"> Upload
+          </button>
+        </div>
+      </div>
+      <div class="clientDetail">
+        <h1 class="rowHeading">Upload resources for the Client</h1>
+      </div>
+      <div class="clientDetail">
+        <h1 class="rowHeading">User's Transactions</h1>
+        <app-common-table [columns]="heading" [dataSource]="dataSource"></app-common-table>
+
+      </div>
+    </div>
+  </div>
+</section>

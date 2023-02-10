@@ -1,0 +1,117 @@
+$color: #7198f3;
+$padding: 30px;
+$border: 3px solid #dcdcdc;
+@mixin btn {
+  width: 400px;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+section {
+  background: #ffffff;
+  height: calc(110vh - 85px);
+  .heading {
+    border-bottom: 1px solid $color;
+    background: #ffffff;
+    margin: -15px 0px 3px 0px;
+    padding: $padding;
+  }
+  .userData {
+    border-top: $border;
+    background: #ffffff;
+    padding: $padding;
+    display: flex;
+    border-bottom: 1px solid $color;
+    .material-icons {
+      font-size: 150px;
+      color: $color;
+    }
+    .data {
+      margin: 30px 0px 0px 60px;
+      .title {
+        color: #d0daf8;
+        font-weight: 500;
+        font-size: 20px;
+        .titleData {
+          margin-left: 15px;
+          color: $color;
+          font-weight: 400;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+  .password {
+    border-top: $border;
+    background: #ffffff;
+    margin-top: 3px;
+    padding: $padding;
+    .mat-error{
+      font-size: 16px;
+    }
+    .subHeading {
+      color: $color;
+      font-weight: 400;
+      font-size: 20px;
+    }
+    label {
+      color: $color;
+      font-size: 18px;
+    }
+    .setPassword {
+      display: flex;
+      flex-direction: column;
+    }
+    #warn {
+      font-size: 18px;
+    }
+    .mat-form-field {
+      width: 500px;
+      .mat-hint,
+      input,
+      ::placeholder,
+      .mat-form-field-label {
+        color: $color;
+      }
+    }
+    .material-icons {
+      color: $color;
+    }
+    ::ng-deep {
+      .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: $color;
+      }
+      .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+      .mat-form-field-outline-thick {
+      color: red !important;
+      opacity: 0.8 !important;
+    }
+    }
+    .newPassword {
+      display: flex;
+      gap: 20px;
+      .warnIcon{
+        font-size: 25px;
+        color: red;
+        vertical-align: middle;
+      }
+    }
+  }
+  .btnGrp {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    background: #ffffff;
+    padding: $padding;
+    #cancelBtn {
+      color: $color;
+      border: 1px solid $color;
+      @include btn();
+    }
+    #saveBtn {
+      color: white;
+      background-color: $color;
+      @include btn();
+    }
+  }
+}

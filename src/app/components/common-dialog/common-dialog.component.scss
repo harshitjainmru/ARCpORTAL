@@ -1,0 +1,55 @@
+$color:#5282f0;
+@mixin btnStyle {
+  border: none;
+  background: transparent;
+  padding: 15px 80px;
+  color: $color;
+  font-size: 18px;
+  cursor: pointer;
+}
+::ng-deep{
+
+ .mat-dialog-container{
+  border: 1px solid $color;
+  text-align: center;
+  padding: 24px 24px 0px 24px;
+  width: 400px;
+  height: 250px;
+  overflow: hidden;
+ }
+}
+section{
+  display: grid;
+  justify-content: center;
+  color: $color;
+  .icon{
+    display: grid;
+    justify-content: center;
+    .crossIcon{
+      margin: -3rem 0rem 0rem 22rem;
+      cursor: pointer;
+    }
+    .fa-circle-question{
+      font-size: 40px;
+      display: flex;
+      justify-content: center;
+      color: $color;
+    }
+  }
+  .header{
+    margin-top: 2.5rem;
+  }
+  .actionBtn{
+    border-top: 2px solid $color;
+
+    .btn{
+      @include btnStyle();
+      margin-top: -10px;
+      height: 63px;
+    }
+    .btn-confirm{
+    border-right: 2px solid $color;
+
+    }
+  }
+}

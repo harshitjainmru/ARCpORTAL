@@ -1,0 +1,33 @@
+<section>
+  <form [formGroup]="formField" (ngSubmit)="onSubmit()">
+    <div class="filterSection">
+      <div class="filterSectionRow1">
+        <div>
+          <mat-form-field appearance="outline" class="field field1">
+            <!-- <mat-label>{{searchTitle}}</mat-label> -->
+            <input matInput [placeholder]="searchTitle" formControlName="search">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="example-full-width2" appearance="outline" class="field">
+            <!-- <mat-label>Show 10</mat-label> -->
+            <mat-select placeholder="Show 10" formControlName="showRow">
+              <mat-option *ngFor="let item of showDropDown" [value]="item">{{item}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="filterSectionRow2">
+        <ng-content select="#clientType"></ng-content>
+        <ng-content select="#userType"></ng-content>
+        <ng-content select=".filterSectionRow2"></ng-content>
+        <ng-content select=".earningFilter"></ng-content>
+      </div>
+      <div class="btnGroup">
+        <button type="submit" mat-raised-button id="save">Apply</button>
+        <button type="submit" mat-raised-button id="reset" (click)="reset()">Reset</button>
+      </div>
+    </div>
+  </form>
+</section>
+

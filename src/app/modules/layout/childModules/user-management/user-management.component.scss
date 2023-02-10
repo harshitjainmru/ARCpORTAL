@@ -1,0 +1,201 @@
+@use '../../../../commonFiles/scssfiles/layoutHeader.scss' as variable;
+section{
+  .userIcon{
+    padding: variable.$padding 50px;
+    display: flex;
+    .icon {
+      display: flex;
+      background: #dde6fd;
+      border-radius: 50%;
+      border: 1px solid variable.$color;
+      height: 150px;
+      width: 150px;
+      margin-top: 20px;
+      #personIcon {
+        font-size: 150px;
+        color: variable.$color;
+      }
+    }
+    .iconText{
+      margin: 80px 0px 0px 30px;
+      color: variable.$color;
+      font-size: 20px;
+      font-weight: 500;
+
+    }
+  }
+  .userForm{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: variable.$padding ;
+    margin: 50px;
+    column-gap: 40px;
+    border: 1px solid variable.$color;
+    .inputField{
+      display: flex;
+      flex-direction: column;
+      margin: 25px;
+      .subTitle{
+        color: variable.$color;
+        font-weight: 500;
+        font-size: 16px;
+      }
+      .alertMessage {
+        font-size: 15px;
+      }
+    }
+    .left {
+      position: relative;
+    }
+
+    .left:after {
+      content: '';
+      position: absolute;
+      right: -3%;
+      border-right: 1px solid #cfc7c0;
+      top: 0;
+      bottom: 0;
+    }
+    .btn{
+      display: flex;
+      justify-content: flex-end;
+      margin: 20px -70px 0px 0px;
+      #saveBtn{
+        width: 100px;
+        padding: 5px;
+        color: #ffff;
+        cursor: pointer;
+        font-size: 20px;
+        background-color: #0000ff;
+        &:disabled{
+          cursor: not-allowed;
+          background-color: #b9c8fa;
+        }
+        }
+    }
+
+  }
+  .userDocument {
+    padding: variable.$padding;
+    margin-top: -1%;
+    margin-left: 20px;
+    color: variable.$color;
+    .mat-radio-group {
+      display: flex;
+      gap: 100px;
+      width: 100%;
+      font-size: 20px;
+
+      ::ng-deep {
+        .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+          border-color: rgb(66, 134, 244);
+        }
+
+        .mat-radio-button.mat-accent .mat-radio-inner-circle {
+          color: rgb(66, 134, 244);
+          background-color: rgb(66, 134, 244);
+        }
+      }
+    }
+    .rowHeading {
+      font-weight: 600;
+      font-size: 25px;
+    }
+    .attendedCall1 {
+      display: flex;
+      justify-content: space-between;
+      .number {
+        margin-right: 19%;
+        #editIcon {
+          font-size: 18px;
+        }
+        #saveBtn {
+          background-color: variable.$color;
+          color: #ffff;
+          width: 100px;
+        }
+      }
+    }
+    .callRow3 {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 4%;
+    }
+    .report {
+      margin-top: 4%;
+    }
+    .reportImage {
+      display: inline-flex;
+      padding: 25px;
+      background-color: #eef2fe;
+      #showImage {
+        height: 150px;
+        width: 250px;
+      }
+      .defaultImg {
+        height: 150px;
+        width: 250px;
+        background-color: #ffff;
+        border-bottom: 5px solid red;
+      }
+      #clearIcon {
+        float: right;
+      }
+      #ImageIcon{
+        display: inline-flex;
+        font-size: 140px;
+        margin: 6% 20%;
+        padding: 3%;
+
+      }
+      #bookIcon {
+        display: inline-flex;
+        color: #ffff;
+        margin: 6% 40%;
+        padding: 3%;
+        background-color: #771cf0;
+      }
+      #uploadBtn {
+        height: 40px;
+        width: 200px;
+        margin: 12% 3%;
+        background-color: variable.$color;
+        color: #ffff;
+        font-size: 20px;
+        border: none;
+      }
+      .files_display {
+        display: none;
+      }
+    }
+    .paymentType {
+      margin-top: 4%;
+    }
+    .amount {
+      margin-top: 4%;
+      display: flex;
+      gap: 30px;
+      .statusAmount {
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .mat-form-field {
+        width: 400px;
+      }
+      .btn {
+        margin-top: 3%;
+        button {
+          width: 100px;
+          background-color: variable.$color;
+          color: #ffff;
+          height: 40px;
+        }
+      }
+    }
+    .attendedCall2 {
+      .clientDetail {
+        margin-top: 4%;
+      }
+    }
+  }
+}

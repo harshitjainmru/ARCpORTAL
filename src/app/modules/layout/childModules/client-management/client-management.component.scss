@@ -1,0 +1,108 @@
+@use '../../../../commonFiles/scssfiles/layoutHeader.scss' as variable;
+$widthDropdown: 200px;
+@mixin btnStyle{
+  width: 180px;
+  font-size: 20px;
+  font-size: 400;
+  padding: 10px;
+}
+section{
+  // height: calc(110vh - 100px);
+  .fileIcon{
+    float: right;
+    margin: 0.5% 2% 1% 2%;
+    cursor: pointer;
+
+
+    .fa-file-export{
+      padding: 10px;
+      background-color: #7198f3;
+      color: #ffff;
+      border-radius: 50%;
+      font-size: 30px;
+    }
+
+  }
+  // .filterSection {
+  //   border: 3px solid variable.$color;
+  //   margin: 80px 30px 0px 30px;
+  //   padding: 20px;
+  //   .mat-hint,
+  //   input,
+  //   ::placeholder,
+  //   .mat-form-field-label {
+  //     color: variable.$color;
+  //     font-weight: 500;
+  //   }
+  //   ::ng-deep {
+  //     .mat-form-field-appearance-outline .mat-form-field-outline {
+  //       color: variable.$color;
+  //     }
+  //     .mat-select-placeholder{
+  //       color: variable.$color;
+  //     }
+  //     .mat-select-arrow {
+  //      width: 0;
+  //      height: 0;
+  //      border-left: 5px solid transparent;
+  //      border-right: 5px solid transparent;
+  //      border-top: 5px solid;
+  //      margin: 0 4px;
+  //      color: variable.$color;
+  //    }
+  //   }
+  //   .filterSectionRow1 {
+  //     display: flex;
+  //     justify-content: space-between;
+  //     padding: variable.$padding;
+  //     .field1 {
+  //       width: 500px;
+  //     }
+  //   }
+  //   .filterSectionRow2 {
+  //     display: flex;
+  //     gap: 15px;
+  //     padding: variable.$padding;
+  //     margin-top: -3%;
+
+  //     label{
+  //       color: variable.$color;
+  //       font-weight: 500;
+  //     }
+
+  //     #status {
+  //       display: flex;
+  //       flex-direction: column;
+  //       width: $widthDropdown;
+  //       margin-top: -20px;
+  //       width: 150px;
+
+  //     }
+
+  //   }
+  //   .btnGroup{
+  //     display: flex;
+  //     gap: 30px;
+  //     padding: variable.$padding;
+  //     margin-top: -4%;
+  //     #save{
+  //       background-color: variable.$color;
+  //       color: #ffff;
+  //       @include btnStyle();
+  //     }
+  //     #reset{
+  //       color: variable.$color;
+  //       border: 1px solid variable.$color;
+  //       @include btnStyle();
+  //     }
+  //   }
+  // }
+  #clientType {
+    display: flex;
+    flex-direction: column;
+    width: $widthDropdown;
+    margin-top: -20px;
+    width: 150px;
+    color: variable.$color;
+  }
+}

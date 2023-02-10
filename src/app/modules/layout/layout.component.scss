@@ -1,0 +1,125 @@
+::ng-deep{
+  .mat-elevation-z8 {
+    box-shadow: none;
+  }
+  .mat-drawer-container{
+    // background-color:gainsboro;
+    // height: auto;
+  }
+}
+
+section {
+  position: relative;
+
+  mat-toolbar {
+    z-index: 100;
+    position: absolute;
+    width: 100px;
+    background-color: transparent;
+    left: 0;
+  }
+  mat-sidenav {
+    border-right: 1px solid #5282f0;
+    background: white;
+    color: #5282f0;
+    padding: 16px;
+    text-align: center;
+  }
+  .logo {
+    display: flex;
+    gap: 5px;
+    margin-left: 55px;
+    margin-bottom: 60px;
+    .userImg{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .title{
+      color: #7198f3;
+      margin-top: 15px;
+      font-size: 30px;
+    }
+  }
+  .sideBar{
+    display: flex;
+    .imgIcon{
+      width: 20px;
+      height: 20px;
+      padding: 10px 0px 10px 60px;
+
+    }
+    .mat-list-item {
+      color: #7198f3;
+      display: flex;
+      margin-bottom: 4px;
+      font-weight: 500;
+      font-size: 16px;
+      text-decoration: none;
+      .mat-icon{
+        padding: 10px 0px 10px 60px;
+      }
+    &:hover {
+      color: #7198f3 !important;
+
+    }
+    .text1{
+      vertical-align: super;
+      padding: 10px 150px 10px 10px;
+
+    }
+    .text2{
+      vertical-align: super;
+      padding: 10px 100px 10px 10px;
+
+    }
+    .text3{
+      vertical-align: super;
+      padding: 10px 90px 10px 5px;
+      float: right;
+
+    }
+    .text4{
+      vertical-align: super;
+      padding: 10px 90px 10px 2px;
+
+    }
+    .text{
+      vertical-align: super;
+      padding: 10px 60px 10px 10px;
+
+    }
+    ::ng-deep {
+      .mat-list-item-content {
+        border-radius: 5px;
+        margin: 0 8px;
+        &:hover {
+          background: #dbe4fc !important;
+        }
+      }
+    }
+  }
+}
+
+  .list-item-active {
+    color: #7198f3 ;
+    text-decoration: none;
+    ::ng-deep {
+      .mat-list-item-content {
+        background: #dbe4fc !important;
+        &:hover {
+          background: #dbe4fc !important;
+
+        }
+      }
+    }
+  }
+
+  .content {
+    height: calc(110vh - 100px);
+    // margin-left: 5px;
+    overflow: auto;
+  }
+}
+
+

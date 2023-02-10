@@ -1,0 +1,210 @@
+$color: #7198f3;
+$padding: 40px;
+section {
+  background: #ffffff;
+  border-left: 5px solid gainsboro;
+  .heading {
+    border-bottom: 1px solid $color;
+    background: #ffffff;
+    padding: 60px 30px 10px 30px;
+    color: $color;
+    font-weight: 500;
+    font-size: 30px;
+  }
+  .border {
+    border-top: 3px solid #dcdcdc;
+    margin-top: -15px;
+  }
+  .subheading {
+    color: $color;
+    font-weight: 500;
+    font-size: 25px;
+    margin-left: 30px;
+  }
+  .userManagement {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    gap: 150px;
+    padding: 15px 30px;
+    border-bottom: 3px solid #dcdcdc;
+
+    .totalUser {
+      border: 10px solid #bcc9eb;
+      padding: 20px;
+      .user {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 50px;
+        padding: 10px;
+        color: $color;
+        text-decoration: none;
+        font-size: 20px;
+
+        h4 {
+          font-size: 20px;
+        }
+      }
+      .active {
+        background-color: $color;
+        color: #ffffff;
+      }
+    }
+    .totalApplied {
+      border: 10px solid #bcc9eb;
+      padding: $padding;
+      .case {
+        background-color: $color;
+        display: flex;
+        color: #ffffff;
+
+        .appliedCase {
+          padding: $padding;
+
+          .totalCases {
+            font-size: 60px;
+          }
+          .text {
+            font-size: 25px;
+          }
+        }
+        .caseIcon {
+          .material-icons {
+            font-size: 60px;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+  .report {
+    padding: 20px 30px;
+    .subtitle {
+      font-size: 25px;
+      font-weight: 500;
+      color: $color;
+      padding-left: 2px;
+    }
+    mat-button-toggle-group {
+      padding: 10px;
+      border: 1px solid #5282f0;
+      border-radius: 5px;
+      mat-button-toggle {
+        width: 150px;
+        p {
+          color: #5282f0;
+          display: flex;
+          align-items: center;
+          font-size: 17px;
+          .dot {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            margin: 0 10px;
+            background-color: #5282f0;
+            display: inline-block;
+          }
+        }
+      }
+      .mat-button-toggle-checked {
+        background-color: #5282f0;
+        color: white;
+        p {
+          color: white;
+          .dot {
+            background-color: white;
+          }
+        }
+      }
+    }
+    .inputFilters {
+      display: grid;
+      grid-template-columns: 30% auto;
+      margin-top: 20px;
+      ::ng-deep .mat-form-field-label {
+        color: $color;
+        margin-left: 10%;
+      }
+      .material-icons {
+        color: $color;
+      }
+      ::ng-deep {
+        .mat-form-field-appearance-outline .mat-form-field-outline {
+          color: $color;
+        }
+        .mat-select-placeholder {
+          color: $color;
+        }
+        .mat-select-arrow {
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 5px solid;
+          margin: 0 4px;
+          font-size: 30px;
+          color: $color;
+        }
+      }
+      .field1 {
+        width: 500px;
+        position: relative;
+
+        .searchIcon {
+          position: absolute;
+          left: 0;
+          font-size: 25px;
+          margin-top: -2%;
+        }
+        ::ng-deep .mat-input-element {
+          margin-left: 45px;
+          vertical-align: super;
+          width: 65vh;
+        }
+      }
+      .field3 {
+        margin-left: 450px;
+      }
+    }
+  }
+
+  .dataUserCases {
+    display: flex;
+    gap: 30px;
+    background-color: #6495ed;
+    color: #ffffff;
+    margin: 20px 28px -29.5px 30px;
+    border: 1px solid blue;
+    .registered {
+      font-size: 20px;
+      margin: 25px;
+      border-bottom: 3px solid white;
+    }
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  section {
+    .userManagement {
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+      gap: 10px;
+      .user {
+        display: flex;
+        justify-content: space-between;
+      }
+      .case {
+        justify-content: space-between;
+      }
+    }
+    .report{
+    .inputFilters{
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+      .field3 {
+        margin-left: 0px;
+        width: 500px;
+      }
+    }
+  }
+  }
+}

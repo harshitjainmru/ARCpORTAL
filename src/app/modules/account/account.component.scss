@@ -1,0 +1,35 @@
+section {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  .container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 95%;
+    @media screen and (max-width: 450px) {
+      width: 100%;
+      overflow: hidden;
+      grid-template-columns: auto;
+
+    }
+    .left {
+      background-color: #759bf3;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      .content {
+        .title {
+          text-align: center;
+          font-size: 70px;
+          font-weight: 500;
+        }
+        .subHeading {
+          font-size: 30px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}

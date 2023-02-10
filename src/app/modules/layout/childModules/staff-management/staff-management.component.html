@@ -1,0 +1,41 @@
+<section>
+  <div class="header">
+    <h1 class="heading">Staff Management</h1>
+    <div class="profileIcon">
+      <span class="material-icons">notifications</span>
+      <div class="user">
+        <span class="material-icons">account_circle</span>
+        <p id="name">user</p>
+      </div>
+    </div>
+  </div>
+  <hr class="border">
+  <div class="btn">
+    <button mat-raised-button id="sendbtn" (click)="navToNewSTAFF()">Add New Staff Member</button>
+  </div>
+  <div class="inputFields">
+    <div class="field">
+      <mat-form-field appearance="outline" class="field1">
+        <input #search placeholder="Search through Staff Id, Name" matInput>
+      </mat-form-field>
+    </div>
+    <div class="field2">
+      <label>Status</label>
+      <mat-form-field class="example-full-width2" appearance="outline" class="field">
+        <mat-select placeholder="Select" matInput>
+          <mat-option>None</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="field3">
+      <mat-form-field class="example-full-width2" appearance="outline" class="field">
+        <!-- <mat-label>Show 10</mat-label> -->
+        <mat-select placeholder="Show 10" matInput>
+          <mat-option>None</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <app-common-table [columns]="heading" [dataSource]="dataSource"></app-common-table>
+</section>

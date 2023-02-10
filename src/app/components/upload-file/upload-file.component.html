@@ -1,0 +1,19 @@
+<body>
+  <div class="preview" *ngIf="uploadImg.length">
+    <ng-container *ngFor="let item of uploadImg; let i=index">
+      <div class="image">
+        <a (click)="deleteImg(i)">
+          <mat-icon class="loc">cancel</mat-icon>
+        </a>
+        <img [src]="item" alt="Document">
+      </div>
+    </ng-container>
+  </div>
+  <div class="doc">
+    <button mat-raised-button type="button" class="add" mat-button (click)="fileInput1.click()">Upload
+        <input #fileInput1 id="file" multiple="" type="file" style="display:none;"
+            (change)="onFileChange($event)" />
+    </button>
+    <mat-spinner *ngIf="uploadSpinner" class="spin" [diameter]="40"></mat-spinner>
+  </div>
+</body>

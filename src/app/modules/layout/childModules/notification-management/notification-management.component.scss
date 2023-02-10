@@ -1,0 +1,46 @@
+@use '../../../../commonFiles/scssfiles/layoutHeader.scss' as variable;
+$widthDropdown: 200px;
+@mixin btnStyle{
+  width: 180px;
+  font-size: 20px;
+  font-size: 400;
+  padding: 10px;
+}
+section {
+  .btn{
+    display: flex;
+    justify-content: flex-end;
+    padding: variable.$padding;
+    margin-bottom: -50px;
+    #sendbtn{
+    width: 250px;
+    padding: 5px;
+    color: #ffff;
+    font-size: 20px;
+    background-color: #0000ff;
+    }
+  }
+  .filterSection{
+         #userType {
+        display: flex;
+        flex-direction: column;
+        width: $widthDropdown;
+        color: variable.$color;
+        margin-top: -20px;
+        width: 150px;
+      }
+    }
+
+}
+@media screen and (max-width:825px) {
+  section{
+    .filterSection{
+      #userType{
+        margin-top: -30px;
+        .example-full-width2{
+          width: 300px;
+        }
+      }
+    }
+  }
+}

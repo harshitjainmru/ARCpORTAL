@@ -1,0 +1,59 @@
+<section>
+
+  <h1 class="heading">Dashboard</h1>
+  <p class="border"></p>
+  <h4 class="subheading">Overview</h4>
+  <div class="userManagement">
+    <div class="totalUser">
+      <a class="user" routerLink="" routerLinkActive="active">
+        <h4>Total User</h4><span>1.1K</span>
+      </a>
+      <a class="user" routerLink="/about" routerLinkActive="active">
+        <h4>Total Active User</h4><span>1.0K</span>
+      </a>
+      <a class="user" routerLink="/hre" routerLinkActive="active">
+        <h4>Total Blocked User</h4><span>100</span>
+      </a>
+    </div>
+    <div class="totalApplied">
+      <div class="case">
+        <div class="appliedCase">
+          <h1 class="totalCases">24,00</h1>
+          <p class="text">Total applied cases</p>
+        </div>
+        <div class="caseIcon">
+          <span class="material-icons">cases</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="report">
+    <h4 class="report subtitle">Reports</h4>
+    <!-- <mat-button-toggle-group>
+      <mat-button-toggle value=""><p>Users  <span class="dot"></span>250</p> </mat-button-toggle>
+      <mat-button-toggle value=""><p>Cases  <span class="dot"></span>400</p> </mat-button-toggle>
+    </mat-button-toggle-group> -->
+    <div class="inputFilters">
+      <mat-form-field appearance="outline" class="field1">
+        <a class="searchIcon">      <mat-icon matPrefix>search</mat-icon> </a>
+        <mat-label>Search by First Name</mat-label>
+          <input matInput #search class="hold1">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="field3">
+          <mat-label>Last Week</mat-label>
+          <mat-select matNativeControl  placeholder="Last Week">
+            <mat-option value="">None</mat-option>
+              <mat-option ></mat-option>
+          </mat-select>
+        </mat-form-field>&nbsp;
+    </div>
+
+  </div>
+  <div class="dataUserCases">
+    <a class="registered" >Registered Users</a>
+    <a class="registered">Registered Cases</a>
+  </div>
+  <app-common-table [columns]="heading" [dataSource]="dataSource"></app-common-table>
+</section>
+

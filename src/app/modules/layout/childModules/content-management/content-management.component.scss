@@ -1,0 +1,40 @@
+@use "../../../../commonFiles/scssfiles/layoutHeader.scss" as variable;
+section {
+  .header{
+  border-bottom: 1px solid variable.$color;
+
+  }
+
+  ::ng-deep {
+    .mat-tab-labels {
+      gap: 150px;
+      padding: 10px 5px;
+      margin-left: 80px;
+
+    }
+    :host .mat-ink-bar {
+      left: 224px ;
+      // width: 200px;
+    }
+    .mat-tab-label {
+      background-color: transparent;
+      color: variable.$color;
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    .mat-tab-label.mat-tab-label-active {
+      background-color: transparent;
+      color: variable.$color;
+      font-weight: 500;
+    }
+    .mat-tab-header {
+      border-top: variable.$border;
+      margin-top: 2px;
+      border-bottom: 1px solid variable.$color;
+    }
+  }
+  // .content{
+  //  padding: 10px 0px 0px 200px;
+  // }
+}

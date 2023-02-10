@@ -1,0 +1,63 @@
+@use "../../../../../commonFiles/scssfiles/layoutHeader.scss" as variable;
+@mixin btnStyle {
+  width: 180px;
+  font-size: 20px;
+  font-size: 400;
+  padding: 10px;
+  cursor: pointer;
+}
+section {
+  .editors {
+    padding: 30px 60px;
+    .subHeading{
+      margin-top: 20px;
+      color: variable.$color;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    ::ng-deep {
+      .tox-tinymce {
+        border-radius: 0px;
+      }
+      .tox .tox-tbtn--bespoke{
+        background-color: #ffff;
+        color: variable.$color;
+      }
+      .tox .tox-tbtn svg{
+        fill: variable.$color;
+      }
+      .tox:not(.tox-tinymce-inline) .tox-editor-header {
+        // background-color: #e2e8fd;
+        padding: 0;
+      }
+      .tox .tox-toolbar__primary{
+        background-color:#e2e8fd ;
+        padding: 10px;
+      }
+    }
+    .textEditor {
+      // border: 1px solid gainsboro;
+      border-radius: 0px;
+    }
+  }
+  .btnGrp {
+    display: flex;
+    gap: 30px;
+    padding: 30px 60px;
+    margin-top: 50px;
+    #cancelBtn {
+      border: 1px solid variable.$color;
+      color: variable.$color;
+      @include btnStyle();
+    }
+    #addBtn {
+      background-color: variable.$color;
+      color: #ffff;
+      @include btnStyle();
+      &:disabled {
+        background-color: rgb(151, 181, 236);
+        cursor: not-allowed;
+      }
+    }
+  }
+}

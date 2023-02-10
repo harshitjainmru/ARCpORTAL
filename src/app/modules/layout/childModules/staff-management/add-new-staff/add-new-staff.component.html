@@ -1,0 +1,64 @@
+<section>
+  <div class="header">
+    <h1 class="heading">Staff Management</h1>
+
+    <div class="profileIcon">
+      <span class="material-icons">notifications</span>
+      <div class="user">
+        <span class="material-icons">account_circle</span>
+        <p id="name">user</p>
+      </div>
+    </div>
+    <div class="breadcrumb">
+      <p class="text"><a  [routerLink]="'STAFF_MANAGE' | absoluteUrl" class="linkDecor">Staff Management </a> > Add Staff</p>
+    </div>
+  </div>
+  <hr class="border">
+  <div class="inputFields">
+    <form [formGroup]="newStaffForm" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <div class="left">
+        <div class="field1">
+          <label>*First Name</label>
+          <mat-form-field appearance="outline">
+            <input formControlName="first_name" matInput>
+            <mat-error *ngFor="let error of errorMessage?.name">
+              <mat-error *ngIf="newStaffForm?.get('first_name')?.hasError(error.type)" class="alertMessage">
+                {{error.message}}
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div><br>
+        <div class="field1">
+          <label>*Last Name</label>
+          <mat-form-field appearance="outline">
+            <input formControlName="last_name" matInput>
+            <mat-error *ngFor="let error of errorMessage?.name">
+              <mat-error *ngIf="newStaffForm?.get('last_name')?.hasError(error.type)" class="alertMessage">
+                {{error.message}}
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- <div class="border"></div> -->
+      <div class="right">
+        <div class="field1">
+          <label>*Email Address</label>
+          <mat-form-field appearance="outline">
+            <input formControlName="email" matInput>
+            <mat-error *ngFor="let error of errorMessage?.Email">
+              <mat-error *ngIf="newStaffForm?.get('email')?.hasError(error.type)" class="alertMessage">
+                {{error.message}}
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="btn">
+        <button mat-raised-button id="saveBtn" [disabled]="newStaffForm.invalid" type="submit">Save</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</section>

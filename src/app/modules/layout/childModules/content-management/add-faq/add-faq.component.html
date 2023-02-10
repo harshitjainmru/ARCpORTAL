@@ -1,0 +1,59 @@
+<section>
+  <div class="header">
+    <h1 class="heading">Content Management</h1>
+
+    <div class="profileIcon">
+      <span class="material-icons">notifications</span>
+      <div class="user">
+        <span class="material-icons">account_circle</span>
+        <p id="name">user</p>
+      </div>
+    </div>
+    <div class="breadcrumb">
+      <p class="text"><a [routerLink]="'CONTENT_MANAGE' | absoluteUrl" class="linkDecor">Content Management </a> > Add
+        a new FAQs</p>
+    </div>
+  </div>
+  <hr class="border">
+  <mat-spinner *ngIf="spinner"> </mat-spinner>
+  <div class="editors" *ngIf="!spinner">
+    <h3 class="subHeading">Question</h3>
+  <form [formGroup]="myForm">
+    <!-- <input formControlName="title"/> -->
+    <editor
+      formControlName="body"
+      class="textEditor"
+      [init]="{
+        icons: 'material',
+        skin: 'borderless',
+        plugins: 'wordcount',
+        menubar: false,
+        statusbar:false,
+
+        min_height: 50
+      }"
+    ></editor>
+  </form>
+    <h3 class="subHeading">Answer</h3>
+  <form [formGroup]="myForm">
+    <!-- <input formControlName="title"/> -->
+    <editor
+      formControlName="textarea"
+      class="textEditor"
+      [init]="{
+        icons: 'material',
+        skin: 'borderless',
+        plugins: 'wordcount',
+        menubar: false,
+        statusbar:false,
+
+        min_height: 50
+      }"
+    ></editor>
+  </form>
+</div>
+  <div class="btnGrp" *ngIf="!spinner">
+    <button mat-raised-button id="cancelBtn">Cancel</button>
+    <button mat-raised-button id="addBtn" [disabled]="this.myForm.invalid" (click)="handleClick()">Add</button>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+<section>
+  <div class="header">
+    <h1 class="heading">Earning Management</h1>
+    <div class="profileIcon">
+      <span class="material-icons">notifications</span>
+      <div class="user">
+        <span class="material-icons">account_circle</span>
+        <p id="name">user</p>
+      </div>
+    </div>
+  </div>
+  <hr class="border">
+  <div class="earning">
+      <h3 class="text">Total Earning</h3>
+      <h3 class="text">$20,000</h3>
+      <h3 >
+        <mat-form-field class="example-full-width2" appearance="outline" class="inputField" required>
+          <mat-select placeholder="Weekly" matInput>
+            <mat-option>None</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+      </h3>
+
+  </div>
+  <app-common-filter (resetButton)="resetFilter()" (applyButton)="applyFilter($event)" [formField]="filterForm" [searchTitle]="'Search through Name, User ID'">
+    <form [formGroup]="filterForm" class="earningFilter">
+
+      <div id="added">
+        <label>Sortby</label>
+        <mat-form-field class="example-full-width2" appearance="outline" required>
+          <mat-select placeholder="Weekly" matInput formControlName="sort">
+            <mat-option>None</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div id="status">
+        <label>Status</label>
+        <mat-form-field class="example-full-width2" appearance="outline" required>
+          <mat-select placeholder="Select" matInput formControlName="status">
+            <mat-option>None</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+      </div>
+  </form>
+  </app-common-filter>
+  <app-common-table [columns]="heading" [dataSource]="dataSource"></app-common-table>
+</section>

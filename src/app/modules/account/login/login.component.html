@@ -1,0 +1,56 @@
+<section>
+  <div>
+    <header>
+      <h1>Sign In to Admin Panel</h1>
+      <h3>Enter the details below</h3>
+    </header>
+  <form [formGroup]="loginForm" (ngSubmit)="onClick()">
+    <label
+      [ngClass]="{'invalid':loginForm.get('email')?.errors && loginForm.get('email')?.touched,'valid':this.loginForm.valid}"><span
+        class="alert">*</span> Email Address</label>
+    <mat-form-field appearance="outline">
+      <!-- <mat-label><span class="alert">*</span>Email Address</mat-label> -->
+      <input matInput formControlName="email" placeholder="Enter email id">
+      <mat-error *ngFor="let error of errorMessage?.email">
+        <mat-error *ngIf="loginForm?.get('email')?.hasError(error?.type)" class="alertMessage">
+          <mat-icon class="warnIcon">warning</mat-icon>{{error.message}}
+        </mat-error>
+      </mat-error>
+    </mat-form-field><br>
+    <label
+      [ngClass]="{'invalid':loginForm.get('password')?.errors && loginForm.get('password')?.touched,'valid':this.loginForm.valid}">
+      <span class="alert">*</span> Password</label>
+    <mat-form-field appearance="outline">
+      <!-- <mat-label>Password</mat-label> -->
+      <input matInput formControlName="password" placeholder="Enter password" [type]="hide ? 'password':'text'"
+        required>
+      <i class="material-icons" matSuffix (click)="hide = !hide">
+        {{hide?'visibility_off':'visibility'}}
+      </i>
+      <mat-error *ngFor="let error of errorMessage?.password">
+        <mat-error *ngIf="loginForm?.get('password')?.hasError(error?.type)" class="alertMessage">
+          <mat-icon class="warnIcon">warning</mat-icon>{{error.message}}
+        </mat-error>
+      </mat-error>
+      <!-- <mat-error *ngIf="loginForm.invalid" class="required">
+        <mat-icon>warning</mat-icon>
+        <p>Please enter the required fields</p>
+      </mat-error> -->
+    </mat-form-field>
+  <footer>
+    <a class="forgot" (click)="navToForgot()">Forgot Password?</a>
+    <mat-checkbox>Remember me</mat-checkbox>
+    <!-- <div class="invalid" *ngIf="loginForm.dirty && loginForm.invalid">
+      <mat-icon>warning</mat-icon>
+      <h4>Please enter the required field</h4>
+    </div> -->
+    <div class="btn">
+      <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">
+        <ng-container *ngIf="!spinner">Login</ng-container>
+        <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+      </button>
+    </div>
+  </footer>
+</form>
+  </div>
+</section>

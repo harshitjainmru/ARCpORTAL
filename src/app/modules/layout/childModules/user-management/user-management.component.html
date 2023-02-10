@@ -1,0 +1,193 @@
+<section>
+  <div class="header">
+    <h1 class="heading">User Management</h1>
+    <div class="profileIcon">
+      <span class="material-icons">notifications</span>
+      <div class="user">
+        <span class="material-icons">account_circle</span>
+        <p id="name">user</p>
+      </div>
+    </div>
+  </div>
+  <hr class="border">
+  <div class="userIcon">
+    <div class="icon">
+      <mat-icon id="personIcon">person</mat-icon>
+    </div>
+      <a href="vh" class="iconText">Upload User Profile</a>
+  </div>
+  <form [formGroup]="userForm" class="userForm">
+    <div class="left">
+      <div class="inputField">
+        <label class="subTitle">*Full Name</label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="full_name" />
+        </mat-form-field>
+      </div>
+      <div class="inputField">
+        <label class="subTitle">*Email Address</label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="email" />
+        </mat-form-field>
+      </div>
+      <div class="inputField">
+        <label class="subTitle">*Phone Number</label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="phone_number" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="right">
+      <div class="inputField">
+        <label class="subTitle">*Postal Code</label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="postal_code" />
+        </mat-form-field>
+      </div>
+      <div class="inputField">
+         <label class="subTitle">*Password</label>
+        <mat-form-field appearance="outline">
+          <input matInput  formControlName="password" [type]="hide ? 'password':'text'">
+          <i class="material-icons" matSuffix (click)="hide = !hide">
+            {{hide?'visibility_off':'visibility'}}
+          </i>
+          <mat-error *ngFor="let error of errorMessage?.password" >
+            <mat-error *ngIf="userForm?.get('password')?.hasError(error?.type)" class="alertMessage">
+              {{error.message}}
+            </mat-error>
+          </mat-error>
+
+        </mat-form-field>
+      </div>
+      <div class="inputField">
+        <label class="subTitle">*Confirm Password</label>
+        <mat-form-field appearance="outline">
+          <input matInput  formControlName="cnfPassword" [type]="hide1 ? 'password':'text'">
+          <i class="material-icons" matSuffix (click)="hide1 = !hide1">
+            {{hide1?'visibility_off':'visibility'}}
+          </i>
+          <mat-error *ngIf="userForm?.controls?.cnfPassword?.errors?.confirmedValidator">Confirm Password does not match with New Password</mat-error>
+
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="btn">
+      <button mat-raised-button id="saveBtn" [disabled]="this.userForm.invalid">Save</button>
+    </div>
+  </form>
+
+  <div class="userDocument">
+    <div class="attendedCall1">
+      <div class="callRow1">
+        <h1 class="rowHeading">Attended Interview#1</h1>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes</mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="number">
+        <h1 class="rowHeading">SSN Number <mat-icon id="editIcon">create</mat-icon>
+        </h1>
+        <mat-form-field appearance="outline">
+          <input matInput>
+        </mat-form-field>&nbsp;
+        <button mat-raised-button id="saveBtn">Save</button>
+      </div>
+    </div>
+    <div class="callRow2">
+      <h1 class="rowHeading">Attended Credit Counselling Session</h1>
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Yes</mat-radio-button>
+        <mat-radio-button value="2">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="callRow3">
+      <div class="reviewed">
+        <h1 class="rowHeading">Credit File Reviewed</h1>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes</mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="report">
+      <h1 class="rowHeading">Credit Report</h1>
+      <div class="reportImage">
+        <img [src]="url" id="showImage" *ngIf="!showImage"> <br />
+        <div class="defaultImg" *ngIf="showImage">
+          <mat-icon id="clearIcon">clear</mat-icon>
+          <span class="material-icons" id="bookIcon">menu_book</span>
+        </div>
+        <button (click)="file1.click()" id="uploadBtn">
+          <input #file1 type='file' (change)="onSelectFile($event)" class="files_display"> Upload
+        </button>
+      </div>
+    </div>
+    <div class="report">
+      <h1 class="rowHeading">Credit Report</h1>
+      <div class="reportImage">
+        <img [src]="url" id="showImage" *ngIf="!showImage"> <br />
+        <div class="defaultImg" *ngIf="showImage">
+          <mat-icon id="ImageIcon">image</mat-icon>
+
+        </div>
+        <button (click)="file2.click()" id="uploadBtn">
+          <input #file2 type='file' (change)="onSelectFile($event)" class="files_display"> Upload
+        </button>
+      </div>
+    </div>
+    <div class="paymentType">
+      <h1 class="rowHeading">Payment Type</h1>
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Pre-filing</mat-radio-button>
+        <mat-radio-button value="2">Post-filing</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="amount">
+      <div class="paid">
+        <p class="statusAmount">Paid Amount</p>
+        <mat-form-field appearance="outline">
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="pending">
+        <p class="statusAmount">Pending Amount</p>
+        <mat-form-field appearance="outline">
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="btn">
+        <button mat-raised-button>Save</button>
+      </div>
+    </div>
+    <div class="attendedCall2">
+      <div class="callRow4">
+        <h1 class="rowHeading">Attended Interview#2</h1>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes</mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="clientDetail">
+        <h1 class="rowHeading">
+          BCI Files
+        </h1>
+        <div class="reportImage">
+          <img [src]="url" id="showImage" *ngIf="!showImage"> <br />
+          <div class="defaultImg" *ngIf="showImage">
+            <mat-icon id="clearIcon">clear</mat-icon>
+            <span class="material-icons" id="bookIcon">menu_book</span>
+          </div>
+          <button (click)="file3.click()" id="uploadBtn">
+            <input #file3 type='file' (change)="onSelectFile($event)" class="files_display"> Upload
+          </button>
+        </div>
+      </div>
+      <div class="clientDetail">
+        <h1 class="rowHeading">Download Resources</h1>
+      </div>
+    </div>
+  </div>
+
+</section>

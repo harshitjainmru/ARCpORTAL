@@ -1,0 +1,31 @@
+<section>
+  <div class="header">
+    <h1 class="heading">Client Management</h1>
+    <div class="profileIcon">
+      <span class="material-icons">notifications</span>
+      <div class="user">
+        <span class="material-icons">account_circle</span>
+        <p id="name">user</p>
+      </div>
+    </div>
+  </div>
+  <hr class="border">
+  <div class="fileIcon">
+    <i class="fa-solid fa-file-export" [routerLink]="'CLIENT_DETAILS' | absoluteUrl"></i>
+  </div>
+  <app-common-filter (resetButton)="resetFilter()" [formField]="filterForm" (applyButton)="applyFilter($event)" [searchTitle]="'Search through Name, Client ID'">
+    <div id="clientType">
+    <form [formGroup]="filterForm">
+      <label>Client Type</label>
+      <mat-form-field class="example-full-width2" appearance="outline" >
+        <mat-select placeholder="Select" matInput formControlName="clientType">
+          <mat-option>None</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+    </form>
+    </div>
+  </app-common-filter>
+  <!-- <app-common-table [columns]="heading" [Table_DATA]="Table_DATA"></app-common-table> -->
+  <app-common-table [columns]="heading" [dataSource]="dataSource" [pageSize]="pageSize"></app-common-table>
+  </section>

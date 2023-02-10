@@ -1,0 +1,138 @@
+@use "../../../../commonFiles/scssfiles/layoutHeader.scss" as variable;
+$widthDropdown: 200px;
+@mixin paymentStyle {
+  background-color: variable.$color;
+  color: #ffff;
+  padding: variable.$padding;
+  h3 {
+    font-size: 25px;
+    font-weight: 500;
+  }
+}
+@mixin btnStyle {
+  width: 180px;
+  font-size: 20px;
+  font-size: 400;
+  padding: 10px;
+}
+section {
+  .payment {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 30px 30px 0px 30px;
+    margin-bottom: -40px;
+    gap: 50px;
+    .userPayment {
+      display: grid;
+      grid-template-columns: auto auto;
+      @include paymentStyle();
+    }
+  }
+
+  .filterSectionRow2 {
+    padding: variable.$padding 0px;
+    margin-top: -3%;
+    .inputFields {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto;
+      gap: 30px;
+      .labelStyle{
+        color: variable.$color;
+        font-weight: 500;
+      }
+      .dropIcon{
+        color: variable.$color;
+        font-weight: bold;
+      }
+      .dateField {
+        margin-top: 20px;
+      }
+      #transactionFilter {
+        display: flex;
+        flex-direction: column;
+        width: $widthDropdown;
+      }
+      #status {
+        display: flex;
+        flex-direction: column;
+        width: $widthDropdown;
+      }
+    }
+    .fileIcon {
+      margin: 25px;
+      .fa-file-export {
+        padding: 10px;
+        background-color: #7198f3;
+        color: #ffff;
+        border-radius: 50%;
+        font-size: 25px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1740px) {
+  section {
+    .filterSectionRow2 {
+      .inputFields {
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto;
+      }
+    }
+  }
+}
+@media screen and (max-width: 880px) {
+  section {
+    .payment {
+      flex-direction: column;
+    }
+  }
+}
+@media screen and (max-width: 785px) {
+  section {
+    .payment {
+      display: flex;
+      padding: 30px 30px 0px 30px;
+      margin-bottom: -40px;
+      gap: 50px;
+      .totalPayment {
+        display: flex;
+        gap: 150px;
+        @include paymentStyle();
+      }
+      .currentPayment {
+        display: flex;
+        gap: 150px;
+        @include paymentStyle();
+      }
+    }
+
+    .filterSectionRow2 {
+      .inputFields {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        margin-top: -50px;
+        .example-full-width2 {
+          width: 400px;
+        }
+        .dateField {
+          margin-top: -20px;
+        }
+      }
+      .fileIcon {
+        margin-top: -25px;
+
+      }
+    }
+  }
+}
+@media screen and (max-width:530px) {
+  section {
+    .filterSectionRow2 {
+      .inputFields {
+        .example-full-width2 {
+          width: 300px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+$primary:#5282f0;
+$backGroundColor:#c0d2fa;
+section {
+  overflow: auto;
+  table {
+    width: 96%;
+    border: 2px solid $primary;
+    margin: 30px;
+    overflow: auto;
+    .isSort{
+      text-align: center;
+    }
+    th{
+      color: $primary;
+      background-color: #c0d2fa;
+      font-size: 18px;
+      font-weight: 500;
+      text-align: center;
+    }
+    tr{
+      text-align: center;
+      overflow-y: auto;
+    }
+    td{
+      color: $primary;
+      .dataLink{
+        color: $primary;
+      }
+    }
+    .showIcon{
+      color: $primary;
+      margin-right: 4px;
+      cursor: pointer;
+    }
+    .noData{
+      padding: 8rem;
+      font-size: 18px;
+    }
+    ::ng-deep .mat-sort-header-container{
+      justify-content: center;
+    }
+  }
+  // .paginator {
+  //   ::ng-deep {
+  //     .mat-paginator-icon {
+  //       color: $primary;
+  //       width: 20px;
+  //     }
+  //     .mat-icon-button {
+  //       background-color: white;
+  //       border: 1px solid $primary;
+  //       box-shadow: 5px 5px 5px -3px rgb(250, 239, 239), 0px 8px 10px 1px white, 0px 3px 14px 2px white;
+  //       margin: 10px;
+  //       margin-right: 0;
+  //       border-radius: 5px;
+  //     }
+
+  //     .mat-paginator-range-label {
+  //       background-color: $primary;
+  //       color: #ffff;
+  //       padding: 10px;
+  //       border-radius: 5px;
+  //       box-shadow: 5px 5px 5px -3px rgb(255, 251, 251), 0px 8px 10px 1px white, 0px 3px 14px 2px white;
+  //     }
+  //     .mat-paginator-outer-container {
+  //       margin-top: -20px;
+  //     }
+  //     .mat-paginator-range-actions {
+  //       margin-right: 1.3rem;
+  //     }
+  //   }
+  //   [hidden]{
+  //     display: none !important;
+  //   }
+  // }
+  ::ng-deep .mat-paginator-container{
+    width: 96%;
+  }
+}
+@media screen and (max-width:800px) {
+  section{
+    table{
+      width: 92%;
+    }
+  }
+}
+// @media screen and (max-width:700px) {
+//   section{
+//     table{
+//       width: 88%;
+//     }
+//   }
+// }
+// @media screen and (max-width:428px) {
+//   section{
+
+//     // width: fit-content;
+//     width: 300px;
+//   }
+// }
+
+
+
